@@ -1,0 +1,33 @@
+--------------
+HMVC
+--------------
+
+1- create folder (widgets) like this : application/modules/module_name/widgets
+2- create folder (views) like this : application/modules/module_name/widgets/views
+
+--------------
+
+3- create widget php file for example : w_test.php
+
+<?php
+
+class W_test extends Widget
+{
+    function run($visible = FALSE) {
+        
+	//test : module name ,, test_view: widget view php file
+        if ($visible) $this->render('test','test_view');
+        
+    }
+} 
+--------------
+4- create you widget view (HTML code) in view folder
+
+<?php
+
+echo 'test widget';
+---------------
+
+5- you can use this widget in any view in your app
+test : module name ,, widget : w_test
+<?php widget::run('test','w_test',TRUE); ?> 
